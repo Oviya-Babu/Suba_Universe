@@ -1,0 +1,86 @@
+{
+  "entrance": {
+    "lines": [
+      "Heyyyy, Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba! 💜",
+      "Happy Birthday to my favourite person in the entire universe! 🎂✨",
+      "Someone has made something special for you.",
+      "And yes, it's probably going to be a little dramatic.",
+      "Because you deserve all the love in the world."
+    ],
+    "yesButton": "YES, SHOW ME! 💜",
+    "noButton": "NO 🙄",
+    "noMessages": [
+      "Subaaaaaaaaa, why would you do that?! 😭",
+      "I literally made this for you!",
+      "Come onnn, you know you want to see it.",
+      "Oviya is going to be heartbroken.",
+      "Subaaaaaaaaa, you can't escape the love! 💜",
+      "Okay, one more chance? 🥺"
+    ],
+    "noMorph": "Okay fine... YES 💜"
+  },
+  "countdown": {
+    "wait": "Waitttt...",
+    "sub": "Something beautiful is loading.",
+    "burst": "HAPPY BIRTHDAY, CHUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUBA! 💜",
+    "skip": "Skip ⚡"
+  },
+  "cake": {
+    "title": "Make a wish, Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba! 🎂💜",
+    "helper": "Tap a candle, press Blow, or blow into your mic.",
+    "blowButton": "Blow Candles 💨",
+    "micButton": "Blow into your mic 🎙️",
+    "micActive": "Listening for your blow...",
+    "micHelper": "Your phone only listens for a puff of air. Nothing is recorded or saved. 💜",
+    "micFallback": "No worries, tap the candles instead 💜",
+    "wishLine": "I hope every little wish your heart makes finds its way to you, Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba 💜.",
+    "continue": "Continue 💜"
+  },
+  "blessing": {
+    "heading": "A Divine Blessing",
+    "paragraphs": [
+      "Some blessings are too beautiful to put into words.",
+      "May Perumal always guide you, protect you, bless you, and walk beside you through every chapter of your life.",
+      "May you never run out of reasons to smile.",
+      "May your heart always find peace.",
+      "And wherever life takes you, may you always feel loved, protected, and blessed."
+    ],
+    "continue": "Open our little universe 💜"
+  },
+  "music": {
+    "heading": "Our Little Playlist 🎧",
+    "invitation": "Play our playlist 🎧",
+    "sub": "Songs that sound like you (and a few that sound like us)."
+  },
+  "scrapbook": {
+    "heading": "Our Little Memory Scrapbook 📸",
+    "sub": "Proof that we have too much fun together.",
+    "videoShelf": "Moving memories 🎞️"
+  },
+  "penguins": {
+    "heading": "Pick a penguin. Each one has something special for you.",
+    "allFound": "You found all of them. Obviously. 😌",
+    "catCameos": [
+      "Meow. (Translation: she's the best.)",
+      "This cat approves of you.",
+      "Oviya told me to sit here and look cute. Mission accomplished."
+    ]
+  },
+  "flowers": {
+    "heading": "FLOWERS FOR YOU",
+    "intro": "If I could send you every beautiful flower in the world, Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba 💙, I would.\n\nBut even all those flowers wouldn't be enough to describe how beautiful your presence is in my life."
+  },
+  "arcade": {
+    "heading": "A few small surprises ✨",
+    "toleranceHeading": "How much does Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba 💜 tolerate Oviya?"
+  },
+  "ui": {
+    "soundOn": "Sound on",
+    "soundOff": "Sound off",
+    "calmMode": "Calm mode",
+    "calmModeActive": "Calm mode on",
+    "menuTitle": "Our Little Universe",
+    "welcomeBack": "Welcome back 💜 Start from the beginning?",
+    "error": "Something wobbled 😅 Refresh and the universe will be back."
+  }
+}

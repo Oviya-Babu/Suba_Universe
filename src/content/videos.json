@@ -1,0 +1,34 @@
+[
+  {
+    "id": "video-01",
+    "src": "videos/memories/video-01.mp4",
+    "poster": "",
+    "title": "A Little Moment of Chaos 🎥",
+    "caption": "Turn the sound on for this one 🔊",
+    "alt": "A short video clip of fun memories between Subashree and Oviya"
+  },
+  {
+    "id": "video-02",
+    "src": "videos/memories/video-02.mp4",
+    "poster": "",
+    "title": "Pure Laughter 💜",
+    "caption": "Can't help but smile every time I watch this.",
+    "alt": "A video clip capturing joyful laughter and shared moments"
+  },
+  {
+    "id": "video-03",
+    "src": "videos/memories/video-03.mp4",
+    "poster": "",
+    "title": "A Quick Hello 🌟",
+    "caption": "Tiny clips, huge feelings.",
+    "alt": "A brief sweet moment captured on camera"
+  },
+  {
+    "id": "video-04",
+    "src": "videos/memories/video-04.mp4",
+    "poster": "",
+    "title": "Unfiltered Us 🎞️",
+    "caption": "Never stop being this silly! 😌",
+    "alt": "Friends being playful and candid together"
+  }
+]

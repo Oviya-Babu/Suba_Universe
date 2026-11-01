@@ -1,0 +1,103 @@
+/* Top Back Navigation Bar (Top Left) */
+
+.top-back-nav {
+  position: fixed;
+  top: max(14px, env(safe-area-inset-top));
+  left: max(14px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1100;
+  pointer-events: auto;
+}
+
+.top-back-btn {
+  background: rgba(30, 16, 53, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(196, 181, 253, 0.38);
+  color: #EDE9FE;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(10, 5, 20, 0.45);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-bounce), background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  user-select: none;
+}
+
+.top-back-btn:hover {
+  background: rgba(45, 25, 78, 0.95);
+  border-color: rgba(245, 217, 139, 0.7);
+  box-shadow: 0 6px 20px rgba(167, 139, 250, 0.5);
+  transform: translateX(-2px);
+  color: #FFFFFF;
+}
+
+.top-back-btn:active {
+  transform: scale(0.95);
+}
+
+.back-arrow {
+  font-size: 1.15rem;
+  line-height: 1;
+  color: #FEF08A;
+}
+
+.back-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.back-text {
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+}
+
+.top-restart-btn {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(196, 181, 253, 0.25);
+  color: #DDD6FE;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.top-restart-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(196, 181, 253, 0.5);
+  color: #FFFFFF;
+}
+
+.top-restart-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 480px) {
+  .restart-text {
+    display: none;
+  }
+
+  .top-restart-btn {
+    padding: 6px 10px;
+    min-width: 38px;
+    justify-content: center;
+  }
+}
+

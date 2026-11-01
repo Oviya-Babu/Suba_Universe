@@ -1,0 +1,102 @@
+.countdown-container {
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #351566 0%, #1E0F38 65%, #0B0514 100%);
+  padding: 24px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.countdown-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 10;
+  position: relative;
+}
+
+.countdown-intro-text {
+  font-size: clamp(1.4rem, 4.5vw, 2.2rem);
+  font-weight: 700;
+  color: #FBF7FF;
+  animation: fadeIn 0.5s ease-out;
+  text-shadow: 0 0 20px rgba(196, 181, 253, 0.6);
+}
+
+.countdown-sub-text {
+  font-size: 1.15rem;
+  color: #C4B5FD;
+  font-family: var(--font-hand);
+  font-size: 1.45rem;
+}
+
+.countdown-number {
+  font-size: clamp(6rem, 25vw, 9.5rem);
+  font-weight: 900;
+  color: #FEF08A;
+  text-shadow: 
+    0 0 25px rgba(254, 240, 138, 0.9),
+    0 0 50px rgba(167, 139, 250, 0.7),
+    0 0 85px rgba(96, 165, 250, 0.5);
+  animation: numPop 0.75s var(--ease-bounce);
+  line-height: 1;
+  position: relative;
+  user-select: none;
+}
+
+@keyframes numPop {
+  0% { transform: scale(0.35) rotate(-6deg); opacity: 0; }
+  60% { transform: scale(1.18) rotate(3deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.countdown-burst-text {
+  font-size: clamp(1.8rem, 6.5vw, 3.2rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  text-shadow: 
+    0 0 24px rgba(196, 181, 253, 0.9),
+    0 0 50px rgba(244, 114, 182, 0.8),
+    0 0 80px rgba(96, 165, 250, 0.6);
+  animation: burstScale 0.8s var(--ease-bounce);
+  margin-bottom: 24px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@keyframes burstScale {
+  0% { transform: scale(0.5); opacity: 0; }
+  70% { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.countdown-skip {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(196, 181, 253, 0.45);
+  color: #EDE9FE;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: var(--radius-full);
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-bounce), background 0.2s;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.countdown-skip:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateX(-50%) scale(1.05);
+}

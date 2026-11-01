@@ -1,0 +1,44 @@
+[
+  {
+    "id": "flower-lavender",
+    "type": "lavender",
+    "label": "Lavender",
+    "color": "#C4B5FD",
+    "message": "Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba 💜, you make everything feel a little calmer. Lavender is just showing off. 💜"
+  },
+  {
+    "id": "flower-tulip",
+    "type": "tulip",
+    "label": "Tulip",
+    "color": "#F472B6",
+    "message": "Subaaaaaaaaa, I would even share my last bite of the ice cream with you! For every time you listened to me without an ounce of judgment. 🍦🌷💙"
+  },
+  {
+    "id": "flower-rose",
+    "type": "rose",
+    "label": "Rose",
+    "color": "#FB7185",
+    "message": "For Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba 💜, the girl who deserves every single beautiful thing this life has to offer. 🌹"
+  },
+  {
+    "id": "flower-daisy",
+    "type": "daisy",
+    "label": "Daisy",
+    "color": "#FEF08A",
+    "message": "Simple, bright, and impossible to be sad around. Just like you, Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba 💙! 🌼"
+  },
+  {
+    "id": "flower-lily",
+    "type": "lily",
+    "label": "Lily",
+    "color": "#E0E7FF",
+    "message": "For your gentle, kind heart, Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba 💜. Please never lose how precious that is. 🤍"
+  },
+  {
+    "id": "flower-wildflower",
+    "type": "wildflower",
+    "label": "Purple Wildflower",
+    "color": "#A78BFA",
+    "message": "For being somebody's safe space. (Mine.) Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba 💙🌿"
+  }
+]

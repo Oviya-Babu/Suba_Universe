@@ -1,0 +1,96 @@
+.kavithai-section {
+  width: 100%;
+  padding: 60px 16px;
+  position: relative;
+  text-align: center;
+}
+
+.kavithai-container {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.kavithai-controls-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.kavithai-card {
+  background: rgba(36, 20, 63, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-lg);
+  text-align: left;
+  min-height: 280px;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.poem-title-ta {
+  font-family: var(--font-tamil);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  margin-bottom: 4px;
+}
+
+.poem-title-en {
+  font-size: 0.95rem;
+  color: var(--color-lavender);
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.poem-lines-ta {
+  font-family: var(--font-tamil);
+  font-size: 1.25rem;
+  line-height: 2;
+  color: #FBF7FF;
+  margin-bottom: 24px;
+}
+
+.poem-lines-en {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-lavender-50);
+  font-style: italic;
+  padding-top: 16px;
+  border-top: 1px dashed var(--color-card-border);
+}
+
+.kavithai-nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.kavithai-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.kavithai-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  min-width: 10px;
+  min-height: 10px;
+  transition: background 0.2s;
+}
+
+.kavithai-dot.active {
+  background: var(--color-primary);
+  transform: scale(1.2);
+}

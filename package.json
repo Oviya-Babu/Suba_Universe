@@ -1,0 +1,36 @@
+{
+  "name": "a-little-universe-called-subashree",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "scan": "node scripts/scan.mjs",
+    "optimize": "node scripts/optimize.mjs",
+    "validate": "node scripts/validate-content.mjs",
+    "check-assets": "node scripts/check-assets.mjs"
+  },
+  "dependencies": {
+    "@fontsource/caveat": "^5.1.0",
+    "@fontsource/noto-sans-tamil": "^5.1.0",
+    "@fontsource/noto-serif-tamil": "^5.1.0",
+    "@fontsource/nunito": "^5.1.0",
+    "canvas-confetti": "^1.9.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^22.13.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "music-metadata": "^10.8.2",
+    "puppeteer-core": "^25.16.0",
+    "sharp": "^0.33.5",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0"
+  }
+}

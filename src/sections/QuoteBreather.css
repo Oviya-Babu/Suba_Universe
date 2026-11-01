@@ -1,0 +1,54 @@
+.quote-breather-band {
+  width: 100%;
+  margin: 48px 0;
+  padding: 48px 20px;
+  background: linear-gradient(135deg, rgba(109, 40, 217, 0.25) 0%, rgba(36, 20, 63, 0.6) 100%);
+  border-top: 1px solid var(--color-card-border);
+  border-bottom: 1px solid var(--color-card-border);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.quote-star-icon {
+  font-size: 1.5rem;
+  color: var(--color-gold);
+  filter: drop-shadow(0 0 8px rgba(245, 217, 139, 0.6));
+}
+
+.quote-text {
+  font-family: var(--font-hand);
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  line-height: 1.5;
+  color: var(--color-cream);
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.25s ease;
+}
+
+.quote-cycle-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-full);
+  padding: 6px 16px;
+  font-size: 0.9rem;
+  color: var(--color-lavender);
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.quote-cycle-btn:hover {
+  background: rgba(167, 139, 250, 0.2);
+  color: #FFFFFF;
+}

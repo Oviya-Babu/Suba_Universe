@@ -1,0 +1,298 @@
+[
+  {
+    "id": "photo-01",
+    "src": "images/memories/photo-01.jpg",
+    "alt": "Portrait of Subashree with heart filter, black and white",
+    "caption": "The birthday girl herself. 💜",
+    "featured": true,
+    "size": "large"
+  },
+  {
+    "id": "photo-19",
+    "src": "images/memories/photo-19.jpg",
+    "alt": "Two friends dressed in elegant traditional Indian attire for a formal occasion",
+    "caption": "Traditional elegance & pure grace. 🌸",
+    "featured": true,
+    "size": "large"
+  },
+  {
+    "id": "photo-12",
+    "src": "images/memories/photo-12.jpg",
+    "alt": "Side-by-side meme comparison of selfies with funny matching cat faces",
+    "caption": "Cat energy matched! 🐱✨",
+    "featured": true,
+    "size": "large"
+  },
+  {
+    "id": "photo-27",
+    "src": "images/memories/photo-27.jpg",
+    "alt": "Subashree outdoors under palm trees wearing colourful rainbow ear muffs",
+    "caption": "Rainbow vibes & palm breeze. 🌴🌈",
+    "featured": true,
+    "size": "large"
+  },
+  {
+    "id": "photo-03",
+    "src": "images/memories/photo-03.jpg",
+    "alt": "Two best friends smiling together on a bus ride with vibe heart text",
+    "caption": "Bus rides and endless talks. 🚌✨",
+    "featured": true,
+    "size": "medium"
+  },
+  {
+    "id": "photo-16",
+    "src": "images/memories/photo-16.jpg",
+    "alt": "Two friends smiling in bright colors, my day",
+    "caption": "Every day is brighter with you. 💖",
+    "featured": true,
+    "size": "medium"
+  },
+  {
+    "id": "photo-36",
+    "src": "images/memories/photo-36.jpg",
+    "alt": "Elevator mirror selfie of the two friends, sharp and stylish",
+    "caption": "Elevator selfies are mandatory. 🛗✨",
+    "featured": true,
+    "size": "large"
+  },
+  {
+    "id": "photo-06",
+    "src": "images/memories/photo-06.jpg",
+    "alt": "Funny selfie with hilarious wig and blue eye makeup filter",
+    "caption": "Chaos, but make it cute. 😌",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-28",
+    "src": "images/memories/photo-28.jpg",
+    "alt": "Landscape scenic memory of the two friends exploring together",
+    "caption": "Adventures are better together. 🗺️",
+    "featured": true,
+    "size": "large"
+  },
+  {
+    "id": "photo-05",
+    "src": "images/memories/photo-05.jpg",
+    "alt": "Black and white portrait of two friends",
+    "caption": "Life is better with you in it.",
+    "featured": false,
+    "size": "small"
+  },
+  {
+    "id": "photo-23",
+    "src": "images/memories/photo-23.jpg",
+    "alt": "Two friends posing happily",
+    "caption": "Two peas in a pod. 🌱",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-09",
+    "src": "images/memories/photo-09.jpg",
+    "alt": "Group selfie with friends having fun, captioned my day",
+    "caption": "The best days with the best people. 🌟",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-33",
+    "src": "images/memories/photo-33.jpg",
+    "alt": "Landscape wide shot of friends enjoying their day out",
+    "caption": "Golden hours & golden memories.",
+    "featured": true,
+    "size": "large"
+  },
+  {
+    "id": "photo-02",
+    "src": "images/memories/photo-02.jpg",
+    "alt": "Subashree with a funny pout expression",
+    "caption": "Zero filter, maximum us.",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-26",
+    "src": "images/memories/photo-26.jpg",
+    "alt": "Two friends having fun outdoors with joyful smiles",
+    "caption": "Pure happiness captured. ✨",
+    "featured": true,
+    "size": "medium"
+  },
+  {
+    "id": "photo-14",
+    "src": "images/memories/photo-14.jpg",
+    "alt": "Two friends smiling warmly",
+    "caption": "One of my favourite humans.",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-08",
+    "src": "images/memories/photo-08.jpg",
+    "alt": "Hilarious selfie with funny afro and sunglasses filter",
+    "caption": "Look at us, being iconic. 💅",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-30",
+    "src": "images/memories/photo-30.jpg",
+    "alt": "Selfie moments of two best friends",
+    "caption": "Always by your side.",
+    "featured": false,
+    "size": "small"
+  },
+  {
+    "id": "photo-04",
+    "src": "images/memories/photo-04.jpg",
+    "alt": "Two girls smiling selfie on bus ride",
+    "caption": "Another memory I wouldn't exchange for anything.",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-21",
+    "src": "images/memories/photo-21.jpg",
+    "alt": "Selfie smiling together",
+    "caption": "Always making me laugh. 👑",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-34",
+    "src": "images/memories/photo-34.jpg",
+    "alt": "Mirror selfie showing friendship vibes",
+    "caption": "Quick selfie check! 📸",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-11",
+    "src": "images/memories/photo-11.jpg",
+    "alt": "Selfie together having fun",
+    "caption": "Proof that we have too much fun together.",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-25",
+    "src": "images/memories/photo-25.jpg",
+    "alt": "Selfie together outdoors",
+    "caption": "Sunshine & smiles. ☀️",
+    "featured": false,
+    "size": "small"
+  },
+  {
+    "id": "photo-07",
+    "src": "images/memories/photo-07.jpg",
+    "alt": "Black and white photo of two friends hanging out",
+    "caption": "Some people just feel like home.",
+    "featured": false,
+    "size": "small"
+  },
+  {
+    "id": "photo-31",
+    "src": "images/memories/photo-31.jpg",
+    "alt": "Two friends sharing laughs",
+    "caption": "Endless giggles & inside jokes.",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-15",
+    "src": "images/memories/photo-15.jpg",
+    "alt": "Fun selfie with afro filter smiling on the train",
+    "caption": "Unapologetic silliness always.",
+    "featured": false,
+    "size": "small"
+  },
+  {
+    "id": "photo-22",
+    "src": "images/memories/photo-22.jpg",
+    "alt": "Lovely moment shared between friends",
+    "caption": "Cherished days.",
+    "featured": false,
+    "size": "small"
+  },
+  {
+    "id": "photo-18",
+    "src": "images/memories/photo-18.jpg",
+    "alt": "Fun candid selfie",
+    "caption": "Unfiltered joy. 💜",
+    "featured": false,
+    "size": "small"
+  },
+  {
+    "id": "photo-29",
+    "src": "images/memories/photo-29.jpg",
+    "alt": "Sweet smile and fun times",
+    "caption": "Never a dull moment.",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-10",
+    "src": "images/memories/photo-10.jpg",
+    "alt": "Friends selfie smiling together",
+    "caption": "A tiny moment that I'm keeping forever.",
+    "featured": false,
+    "size": "small"
+  },
+  {
+    "id": "photo-35",
+    "src": "images/memories/photo-35.jpg",
+    "alt": "Warm selfie in soft lighting",
+    "caption": "Peace, love & laughter. ✌️",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-13",
+    "src": "images/memories/photo-13.jpg",
+    "alt": "Sweet selfie moment together",
+    "caption": "Another page in our story.",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-24",
+    "src": "images/memories/photo-24.jpg",
+    "alt": "Warm selfie together",
+    "caption": "Can't imagine college without you.",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-17",
+    "src": "images/memories/photo-17.jpg",
+    "alt": "Lovely selfie together",
+    "caption": "My constant safe space.",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-32",
+    "src": "images/memories/photo-32.jpg",
+    "alt": "Playful selfie smiling together",
+    "caption": "My partner in crime. 💜",
+    "featured": false,
+    "size": "medium"
+  },
+  {
+    "id": "photo-20",
+    "src": "images/memories/photo-20.jpg",
+    "alt": "Candid photo of two friends",
+    "caption": "Sweet little memories.",
+    "featured": false,
+    "size": "small"
+  },
+  {
+    "id": "photo-37",
+    "src": "images/memories/photo-37.jpg",
+    "alt": "A sweet snapshot of friend having fun",
+    "caption": "Bonus memory for the sweetest soul. 💜",
+    "featured": false,
+    "size": "small"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "penguin-1",
+    "variant": "party-hat",
+    "name": "Party Pip",
+    "message": "Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba 💜, you're my favourite human in the whole galaxy! 🐧🎉"
+  },
+  {
+    "id": "penguin-2",
+    "variant": "gift",
+    "name": "Gifty Barnaby",
+    "message": "Thank you for listening to all my nonsense without judging, Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba 💙. 🎁"
+  },
+  {
+    "id": "penguin-3",
+    "variant": "scarf",
+    "name": "Cozy Pingu",
+    "message": "Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba 💜, you're stuck with me forever. Sorry, not sorry! 🧣💜"
+  },
+  {
+    "id": "penguin-4",
+    "variant": "flower-crown",
+    "name": "Flora",
+    "message": "I would even share my last bite of the ice cream with you, Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba! 🍦🌸💜 Do you know how serious that is?!"
+  },
+  {
+    "id": "penguin-5",
+    "variant": "crown",
+    "name": "Queen Penny",
+    "message": "Plot twist: I'm the truly lucky one to have you in my life, Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba 💙. 👑✨"
+  },
+  {
+    "id": "penguin-6",
+    "variant": "sleepy",
+    "name": "Snoozy Sam",
+    "message": "Reminder from Oviya: Subaaaaaaaaa! Drink water, be soft with yourself, and text me! 💜"
+  }
+]

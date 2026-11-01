@@ -1,0 +1,34 @@
+{
+  "friendName": "Subashree",
+  "fromName": "Oviya B.",
+  "birthday": {
+    "month": 11,
+    "day": 4
+  },
+  "candleCount": 5,
+  "meta": {
+    "title": "A Little Universe Called Subashree 💜",
+    "description": "Something made with love."
+  },
+  "blessing": {
+    "imageAlt": "A picture of Perumal, shared as a blessing"
+  },
+  "features": {
+    "micBlow": true,
+    "sfxDefaultOn": true,
+    "cursorHearts": true,
+    "catFollower": false,
+    "hiddenMessage": true,
+    "unlockDate": false
+  },
+  "theme": {
+    "primary": "#A78BFA",
+    "lavender": "#C4B5FD",
+    "lavender50": "#EDE9FE",
+    "violetDeep": "#6D28D9",
+    "midnight": "#24143F",
+    "iceBlue": "#BFDBFE",
+    "periwinkle": "#A5B4FC",
+    "pink": "#FBCFE8"
+  }
+}

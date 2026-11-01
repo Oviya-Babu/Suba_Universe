@@ -1,0 +1,496 @@
+.arcade-section {
+  width: 100%;
+  padding: 60px 16px;
+  position: relative;
+}
+
+.arcade-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.arcade-card {
+  background: rgba(36, 20, 63, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.arcade-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-lavender-50);
+  margin-bottom: 6px;
+}
+
+.arcade-card-desc {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+}
+
+/* 1. Gift boxes */
+.gift-boxes-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gift-box-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  min-width: 120px;
+  transition: transform 0.25s var(--ease-bounce);
+}
+
+.gift-box-btn:hover {
+  transform: translateY(-4px);
+  background: rgba(167, 139, 250, 0.12);
+}
+
+.gift-box-btn.opened {
+  background: rgba(167, 139, 250, 0.2);
+  border-color: var(--color-primary);
+}
+
+.gift-box-btn.active-box {
+  background: rgba(167, 139, 250, 0.35);
+  border-color: #FEF08A;
+  box-shadow: 0 0 16px rgba(254, 240, 138, 0.45);
+  transform: translateY(-4px) scale(1.03);
+}
+
+.gift-box-icon {
+  font-size: 2.5rem;
+}
+
+/* Rich Mystery Gift Reveal Containers */
+.gift-reveal-box {
+  background: rgba(26, 14, 46, 0.95);
+  border: 1.5px solid rgba(196, 181, 253, 0.45);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  margin-top: 24px;
+  text-align: center;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 24px rgba(167, 139, 250, 0.25);
+  animation: popIn 0.35s var(--ease-bounce);
+  overflow: hidden;
+  position: relative;
+}
+
+/* --- Box 1: Stella Wishing Star --- */
+.stella-box {
+  background: radial-gradient(circle at top center, rgba(88, 28, 135, 0.6) 0%, rgba(20, 10, 36, 0.98) 80%);
+  border-color: rgba(254, 240, 138, 0.6);
+  box-shadow: 0 0 32px rgba(254, 240, 138, 0.3), inset 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.stella-star-visual {
+  margin: 0 auto 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stella-svg {
+  animation: stellaFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes stellaFloat {
+  0% { transform: translateY(0) scale(0.98); }
+  100% { transform: translateY(-8px) scale(1.04); }
+}
+
+.stella-rays {
+  animation: stellaSpin 20s linear infinite;
+  transform-origin: 100px 100px;
+}
+
+@keyframes stellaSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.stella-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #FEF08A, #F59E0B);
+  color: #1E1035;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 8px;
+}
+
+.stella-title {
+  font-size: clamp(1.25rem, 4vw, 1.6rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  text-shadow: 0 0 16px rgba(254, 240, 138, 0.7);
+  margin-bottom: 12px;
+}
+
+.stella-message {
+  font-size: 1.05rem;
+  color: #EDE9FE;
+  line-height: 1.6;
+  max-width: 540px;
+  margin: 0 auto 16px;
+}
+
+.stella-faith-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(254, 240, 138, 0.35);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  max-width: 560px;
+  margin: 0 auto 20px;
+  text-align: left;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #FDF8FF;
+}
+
+.stella-wish-btn {
+  background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 100%) !important;
+  color: #1E1035 !important;
+  font-weight: 800 !important;
+  font-size: 1.05rem !important;
+  padding: 12px 24px !important;
+  border-radius: var(--radius-full) !important;
+  box-shadow: 0 4px 20px rgba(254, 240, 138, 0.5) !important;
+  transition: transform 0.2s var(--ease-bounce), box-shadow 0.2s !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stella-wish-btn:hover {
+  transform: scale(1.04) !important;
+  box-shadow: 0 6px 26px rgba(254, 240, 138, 0.75) !important;
+}
+
+/* --- Box 2: A Song For You Babe --- */
+.song-box {
+  background: radial-gradient(circle at top center, rgba(168, 85, 247, 0.45) 0%, rgba(20, 10, 36, 0.98) 85%);
+  border-color: rgba(244, 114, 182, 0.6);
+}
+
+.song-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #F472B6, #8B5CF6);
+  color: #FFFFFF;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 8px;
+}
+
+.song-box-title {
+  font-size: clamp(1.2rem, 3.8vw, 1.55rem);
+  font-weight: 800;
+  color: #FEF08A;
+  margin-bottom: 16px;
+}
+
+.song-lyrics-card {
+  background: rgba(30, 16, 53, 0.85);
+  border: 1.5px dashed rgba(244, 114, 182, 0.5);
+  border-radius: 16px;
+  padding: 20px 24px;
+  max-width: 440px;
+  margin: 0 auto 20px;
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.5);
+}
+
+.song-cassette-decor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(244, 114, 182, 0.25);
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+
+.cassette-tape {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #F472B6;
+  letter-spacing: 1px;
+}
+
+.cassette-reels {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tape-line {
+  width: 24px;
+  height: 2px;
+  background: #A78BFA;
+}
+
+.song-lyrics-text {
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  line-height: 1.6;
+  color: #EDE9FE;
+  font-weight: 700;
+  text-align: center;
+}
+
+.lyrics-divider {
+  font-size: 1rem;
+  color: #F472B6;
+  margin: 8px 0;
+}
+
+.song-youtube-link {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 50%, #B91C1C 100%) !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+  font-size: 1.05rem !important;
+  padding: 12px 28px !important;
+  border-radius: var(--radius-full) !important;
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.5) !important;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s var(--ease-bounce), box-shadow 0.2s !important;
+}
+
+.song-youtube-link:hover {
+  transform: scale(1.04) !important;
+  box-shadow: 0 6px 26px rgba(239, 68, 68, 0.75) !important;
+}
+
+/* --- Box 3: Top Secret Surprise --- */
+.secret-box {
+  background: radial-gradient(circle at top center, rgba(139, 92, 246, 0.45) 0%, rgba(20, 10, 36, 0.98) 85%);
+  border-color: rgba(196, 181, 253, 0.6);
+}
+
+.secret-box-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.secret-lock-badge {
+  background: linear-gradient(135deg, #FDE68A, #D97706);
+  color: #1E1035;
+  font-size: 0.85rem;
+  font-weight: 900;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+}
+
+.secret-title {
+  font-size: clamp(1.2rem, 3.8vw, 1.55rem);
+  font-weight: 800;
+  color: #FEF08A;
+  margin-bottom: 14px;
+}
+
+.secret-message-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(196, 181, 253, 0.35);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  max-width: 500px;
+  margin: 0 auto 18px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #EDE9FE;
+  text-align: center;
+}
+
+.secret-highlight {
+  font-size: 1.25rem;
+  font-family: var(--font-hand);
+  color: #FBCFE8;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.secret-footer-badge {
+  display: inline-block;
+  background: rgba(167, 139, 250, 0.2);
+  border: 1px solid rgba(167, 139, 250, 0.45);
+  color: #DDD6FE;
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.gift-reveal-text {
+  background: rgba(251, 207, 232, 0.15);
+  border: 1px dashed var(--color-pink);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-top: 16px;
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  color: var(--color-cream);
+  animation: popIn 0.3s var(--ease-bounce);
+}
+
+/* 2. Scratch Cards */
+.scratch-cards-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.scratch-card-item {
+  width: 200px;
+  height: 120px;
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background: linear-gradient(135deg, #4C1D95, #2E1065);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  text-align: center;
+}
+
+.scratch-secret-text {
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.3;
+}
+
+.scratch-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.scratch-reveal-btn {
+  font-size: 0.75rem;
+  color: var(--color-lavender);
+  margin-top: 6px;
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+  min-height: auto;
+  min-width: auto;
+}
+
+/* 3. Friendship Wheel */
+.wheel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.wheel-stage {
+  position: relative;
+  width: 260px;
+  height: 260px;
+}
+
+.wheel-canvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.4);
+}
+
+.wheel-pointer {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 24px solid var(--color-gold);
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+  z-index: 10;
+}
+
+.wheel-result-card {
+  background: rgba(251, 247, 255, 0.15);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-md);
+  padding: 12px 20px;
+  font-family: var(--font-hand);
+  font-size: 1.4rem;
+  color: var(--color-gold);
+  box-shadow: var(--shadow-sm);
+  animation: popIn 0.3s var(--ease-bounce);
+}
+
+/* 4. Tolerance Meter */
+.tolerance-meter-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.tolerance-slider {
+  width: 100%;
+  height: 12px;
+  border-radius: 6px;
+  accent-color: var(--color-violet-deep);
+  cursor: pointer;
+}
+
+.tolerance-value-display {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-lavender-50);
+}
+
+.tolerance-label-badge {
+  background: rgba(167, 139, 250, 0.2);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  padding: 8px 20px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-cream);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Production build output
+dist/
+
+# Test output & screenshots
+browser-test-output/
+
+# Project building specifications & internal planning docs
+files/
+docs/
+PRD.md
+ANTIGRAVITY_HANDOFF.md
+ASSET_CHECKLIST.md
+CONTENT_CONFIG_GUIDE.md
+
+# Debug & scratch test scripts
+scripts/debug*.mjs
+
+# Raw unoptimized source media (privacy protection & size optimization)
+# (All web-ready, stripped assets are cleanly hosted in public/assets/)
+us photos/
+*.mpeg
+perumal*.jpeg
+WhatsApp Image*.jpeg
+
+# Environment variables & local logs
+.env
+.env.*
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# OS & Editor generated files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,31 @@
+{
+  "giftBoxes": [
+    "✨ Box 1: The Stella Wishing Star · Your miracle is on its way, Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba! 💜 High optimism & cosmic hope for everything you desire.",
+    "🎶 Box 2: A song for you babe · My baby, I love you voice...",
+    "🤫 Box 3: Top Secret! · A special surprise that will be revealed when I meet you, babe! 💜✨"
+  ],
+  "scratchCards": [
+    "Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba 💜, you are loved. Yes, you. Stop checking. 💜",
+    "Your superpower: making people feel safe enough to be themselves. Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba 💙",
+    "Prediction: more happiness than Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba 💜 can handle this year! ✨"
+  ],
+  "wheel": [
+    "Listen to a rant 🎧",
+    "Random philosophy question 🌌",
+    "Song recommendation 🎶",
+    "Compliment attack 💜",
+    "Pick the next movie 🎬",
+    "Penguin hug 🐧",
+    "Oviya says thank you (again) 🥺",
+    "Talk about nothing for an hour 🌙"
+  ],
+  "toleranceLabels": [
+    { "min": 0, "label": "Mildly amused 🙂" },
+    { "min": 25, "label": "Slightly concerned 😅" },
+    { "min": 50, "label": "Saintly patience 😇" },
+    { "min": 75, "label": "Certified Oviya survivor 🏅" },
+    { "min": 101, "label": "ERROR: patience exceeds the measurable universe 💥 (thank you, Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba 💜)" }
+  ],
+  "insideJokes": [],
+  "timeline": []
+}

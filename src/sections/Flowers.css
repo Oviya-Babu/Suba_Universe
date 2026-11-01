@@ -1,0 +1,115 @@
+.flowers-section {
+  width: 100%;
+  padding: 60px 16px;
+  position: relative;
+  text-align: center;
+}
+
+.flowers-intro-text {
+  max-width: 580px;
+  margin: 0 auto 32px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-lavender-50);
+  white-space: pre-line;
+}
+
+.garden-scene {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 16px 20px;
+  max-width: 720px;
+  margin: 0 auto 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.garden-flowers-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  min-height: 180px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid rgba(167, 139, 250, 0.4);
+}
+
+.flower-interactive-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  transition: transform 0.25s var(--ease-bounce);
+  transform-origin: bottom center;
+}
+
+.flower-interactive-btn:hover {
+  transform: scale(1.1);
+}
+
+.flower-interactive-btn.blooming {
+  animation: flowerBloom 0.5s var(--ease-bounce);
+}
+
+@keyframes flowerBloom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.22); }
+  100% { transform: scale(1); }
+}
+
+.flower-sway {
+  animation: sway 4s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+.flower-interactive-btn:nth-child(2) .flower-sway { animation-delay: -1s; }
+.flower-interactive-btn:nth-child(3) .flower-sway { animation-delay: -2s; }
+.flower-interactive-btn:nth-child(4) .flower-sway { animation-delay: -1.5s; }
+.flower-interactive-btn:nth-child(5) .flower-sway { animation-delay: -0.5s; }
+.flower-interactive-btn:nth-child(6) .flower-sway { animation-delay: -2.5s; }
+
+@keyframes sway {
+  0% { transform: rotate(-3deg); }
+  100% { transform: rotate(3deg); }
+}
+
+.flower-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-lavender-50);
+}
+
+.flower-message-card {
+  background: rgba(251, 247, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-md);
+  padding: 16px 24px;
+  max-width: 520px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-md);
+  animation: popIn 0.3s var(--ease-bounce);
+}
+
+.flower-message-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  margin-bottom: 6px;
+}
+
+.flower-message-text {
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  color: #FFFFFF;
+  margin: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}

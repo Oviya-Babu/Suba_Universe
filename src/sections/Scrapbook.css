@@ -1,0 +1,178 @@
+.scrapbook-section {
+  width: 100%;
+  padding: 60px 16px;
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+}
+
+.scrapbook-grid {
+  columns: 2;
+  column-gap: 20px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .scrapbook-grid {
+    columns: 3;
+    column-gap: 26px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .scrapbook-grid {
+    columns: 4;
+    column-gap: 28px;
+  }
+}
+
+.polaroid-card {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  padding: 10px 10px 24px;
+  margin-bottom: 28px;
+  border-radius: 4px;
+  box-shadow: 2px 4px 14px rgba(20, 10, 35, 0.28);
+  position: relative;
+  cursor: pointer;
+  transform-origin: center center;
+  transition: transform 0.25s var(--ease-soft), box-shadow 0.25s var(--ease-soft);
+  text-align: center;
+  color: #1E1035;
+}
+
+.polaroid-card:hover {
+  transform: translateY(-4px) scale(1.02) rotate(0deg) !important;
+  box-shadow: 0 10px 28px rgba(20, 10, 35, 0.45);
+  z-index: 5;
+}
+
+.polaroid-image-wrapper {
+  width: 100%;
+  background: #F3EEFA;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4/5;
+}
+
+.polaroid-card.landscape .polaroid-image-wrapper {
+  aspect-ratio: 4/3;
+}
+
+.polaroid-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.polaroid-caption {
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #2E1B4E;
+  margin-top: 10px;
+  padding: 0 4px;
+  line-height: 1.3;
+}
+
+/* Washi Tape Strip */
+.washi-tape {
+  position: absolute;
+  top: -8px;
+  left: 20%;
+  width: 50px;
+  max-width: 45%;
+  height: 16px;
+  background: rgba(221, 214, 254, 0.65);
+  backdrop-filter: blur(2px);
+  border-left: 2px dashed rgba(167, 139, 250, 0.4);
+  border-right: 2px dashed rgba(167, 139, 250, 0.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.washi-tape.tape-alt {
+  left: auto;
+  right: 15%;
+  background: rgba(251, 207, 232, 0.65);
+  border-color: rgba(244, 114, 182, 0.4);
+}
+
+/* Polaroid Cute Sticker Badge */
+.polaroid-sticker-badge {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  background: linear-gradient(135deg, #FDE68A, #FBCFE8);
+  color: #2D1755;
+  font-family: var(--font-hand);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transform: rotate(4deg);
+  pointer-events: none;
+  z-index: 4;
+  border: 1px dashed rgba(167, 139, 250, 0.5);
+}
+
+/* Video Shelf */
+.video-shelf-container {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px dashed var(--color-card-border);
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.video-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  background: #000000;
+  aspect-ratio: 9/16;
+  max-height: 480px;
+}
+
+.memory-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-info {
+  padding: 14px;
+}
+
+.video-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-lavender-50);
+  margin-bottom: 4px;
+}
+
+.video-caption {
+  font-size: 0.88rem;
+  color: var(--color-lavender);
+}

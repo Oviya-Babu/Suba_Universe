@@ -1,0 +1,65 @@
+[
+  {
+    "id": "song-01",
+    "title": "Asku Laska",
+    "artist": "Vijay Prakash, Chinmayi Sripada",
+    "src": "audio/playlist/song-01.mp3",
+    "artwork": "",
+    "note": "A song full of energy and magic, just like you! ✨",
+    "shortLine": ""
+  },
+  {
+    "id": "song-02",
+    "title": "Sweet Melody",
+    "artist": "Special Track",
+    "src": "audio/playlist/song-02.mp3",
+    "artwork": "",
+    "note": "For the quiet comfort and warm feelings. 🎧",
+    "shortLine": ""
+  },
+  {
+    "id": "song-03",
+    "title": "Ennavendru Solvathamma",
+    "artist": "S. P. Balasubrahmanyam, K. S. Chithra",
+    "src": "audio/playlist/song-03.mp3",
+    "artwork": "",
+    "note": "A timeless classic that makes the heart peaceful. 🌸",
+    "shortLine": ""
+  },
+  {
+    "id": "song-04",
+    "title": "Vaayamoodi Summa Iru Da (Strings)",
+    "artist": "Alaap Raju",
+    "src": "audio/playlist/song-04.mp3",
+    "artwork": "",
+    "note": "When we need to breathe, smile, and let music do the talking.",
+    "shortLine": ""
+  },
+  {
+    "id": "song-05",
+    "title": "Hangova",
+    "artist": "Anirudh Ravichander",
+    "src": "audio/playlist/song-05.mp3",
+    "artwork": "",
+    "note": "Vibes, beats, and pure high spirits! 💃",
+    "shortLine": ""
+  },
+  {
+    "id": "song-06",
+    "title": "Comfort Rhythm",
+    "artist": "Acoustic Moments",
+    "src": "audio/playlist/song-06.mp3",
+    "artwork": "",
+    "note": "A little rhythm to keep you company anytime.",
+    "shortLine": ""
+  },
+  {
+    "id": "song-07",
+    "title": "Jhol",
+    "artist": "Maanu & Annural Khalid",
+    "src": "audio/playlist/song-07.mp3",
+    "artwork": "",
+    "note": "Soft, aesthetic vibes for our late-night thoughts. 🌙",
+    "shortLine": ""
+  }
+]
