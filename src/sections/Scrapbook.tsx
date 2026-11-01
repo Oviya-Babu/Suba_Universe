@@ -23,7 +23,7 @@ const getBadge = (photoId: string): string | null => {
     case 'photo-12': return '🐱 Cat Energy';
     case 'photo-16': return '💖 Pure Joy';
     case 'photo-21': return '👑 So Regal';
-    case 'photo-25': return '🌈 Cozy Winter';
+    case 'photo-25': return '❄️ Cozy Winter';
     case 'photo-28': return '🌴 Paradise';
     case 'photo-35': return '✌️ Peace & Love';
     default: return null;

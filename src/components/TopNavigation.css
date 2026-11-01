@@ -57,14 +57,33 @@
 }
 
 .top-back-btn {
-  background: rgba(40, 20, 70, 0.88);
-  border-color: rgba(245, 217, 139, 0.5);
+  background: rgba(30, 16, 53, 0.88);
+  border: 1.5px solid rgba(196, 181, 253, 0.45);
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(10, 5, 20, 0.45);
+  transition: transform 0.2s var(--ease-bounce), background 0.2s, border-color 0.2s;
+}
+
+.top-back-btn:hover {
+  background: rgba(50, 25, 90, 0.95);
+  border-color: #FEF08A;
+  transform: translateY(-2px) scale(1.06);
 }
 
 .top-back-btn .btn-arrow {
   color: #FEF08A;
-  font-size: 1.15rem;
+  font-size: 1.45rem;
+  font-weight: 900;
   line-height: 1;
+  margin-right: 2px;
 }
 
 .top-pill-btn.active {
