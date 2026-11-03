@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useJourney } from '../journey/JourneyProvider';
 import { useAudio } from '../audio/AudioProvider';
 import { playSFX } from '../audio/sfx';
+import { rainASMR } from '../audio/rainASMR';
 import copyData from '../content/copy.json';
 import './TopNavigation.css';
 
 export const TopNavigation: React.FC = () => {
   const { stage, soundOn, calmMode, dispatch, goBack } = useJourney();
   const { isPlaying, togglePlay, currentSong } = useAudio();
+  const [isRainActive, setIsRainActive] = useState<boolean>(true);
   const copyUI = copyData.ui;
+
+  useEffect(() => {
+    setIsRainActive(rainASMR.getIsPlaying());
+  }, []);
 
   const handleBack = () => {
     playSFX('whoosh', soundOn);
@@ -17,6 +23,12 @@ export const TopNavigation: React.FC = () => {
     } else {
       goBack();
     }
+  };
+
+  const handleToggleRain = () => {
+    const next = rainASMR.toggle();
+    setIsRainActive(next);
+    playSFX('pop', soundOn);
   };
 
   return (
@@ -55,6 +67,16 @@ export const TopNavigation: React.FC = () => {
               <span className="bar bar-3" />
             </span>
           )}
+        </button>
+
+        <button
+          className={`top-pill-btn rain-control-btn ${isRainActive ? 'active' : ''}`}
+          onClick={handleToggleRain}
+          aria-label={isRainActive ? 'Cozy Rain ASMR on' : 'Cozy Rain ASMR muted'}
+          title={isRainActive ? 'Cozy Rain ASMR: On (Click to mute)' : 'Cozy Rain ASMR: Off (Click to play)'}
+        >
+          <span>🌧️</span>
+          <span className="btn-text desktop-only">{isRainActive ? 'Rain ASMR' : 'Rain Off'}</span>
         </button>
 
         <button

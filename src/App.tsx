@@ -5,6 +5,7 @@ import { FXEngine } from './components/FXEngine';
 import { TopNavigation } from './components/TopNavigation';
 import { MiniPlayer } from './components/MiniPlayer';
 import { CelestialAtmosphere } from './components/CelestialAtmosphere';
+import { CozyRainEffect } from './components/CozyRainEffect';
 
 // Act I Sections
 import { Entrance } from './sections/Entrance';
@@ -39,6 +40,9 @@ const AppContent: React.FC = () => {
           showShootingStar={true}
         />
       </div>
+
+      {/* Cozy Warm Rainy Window ASMR Effect with Flowing Raindrops */}
+      <CozyRainEffect />
 
       {/* Shared FX Canvas for Hearts, Butterflies & Stardust */}
       <FXEngine />
