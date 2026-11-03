@@ -395,6 +395,11 @@ export const Cake: React.FC = () => {
 
           <div className="wish-friends-cheer">
             <Character type="cat" variant="party" size={55} />
+            <img
+              src={`${import.meta.env.BASE_URL}assets/stickers/whatsapp-sticker.webp`}
+              alt="Cheering cute sticker"
+              className="wish-cheer-sticker"
+            />
             <span className="wish-cheer-badge">Yayyy!! Happy Birthday Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba! 💜🎉</span>
             <Character type="penguin" variant="party-hat" size={55} />
           </div>

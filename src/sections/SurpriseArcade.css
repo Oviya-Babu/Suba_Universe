@@ -411,6 +411,57 @@
 }
 
 /* 3. Friendship Wheel */
+.secret-animated-sticker {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(167, 139, 250, 0.45));
+  animation: floatSmall 3s ease-in-out infinite;
+}
+
+@keyframes floatSmall {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(-3deg); }
+}
+
+.wheel-cheerleader-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(30, 16, 53, 0.7);
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  border-radius: var(--radius-full);
+  padding: 6px 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.wheel-mascot-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.wheel-mascot-speech {
+  font-size: 0.88rem;
+  color: #FEF08A;
+  font-weight: 700;
+}
+
+.wheel-spin-action-btn {
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  padding: 12px 28px !important;
+  border-radius: var(--radius-full) !important;
+  background: linear-gradient(135deg, #A855F7, #EC4899) !important;
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4) !important;
+  transition: transform 0.2s var(--ease-bounce), box-shadow 0.2s !important;
+}
+
+.wheel-spin-action-btn:hover:not(:disabled) {
+  transform: scale(1.05) !important;
+  box-shadow: 0 6px 24px rgba(236, 72, 153, 0.5) !important;
+}
+
 .wheel-container {
   display: flex;
   flex-direction: column;

@@ -70,7 +70,7 @@ const initialState: JourneyState = {
   stage: getInitialStage(),
   actIComplete: false,
   soundOn: saved.soundOn ?? true,
-  calmMode: saved.calmMode ?? prefersReducedMotion,
+  calmMode: saved.calmMode ?? false,
   audioUnlocked: false,
 };
 

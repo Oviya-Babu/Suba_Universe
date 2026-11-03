@@ -32,17 +32,53 @@ export const FXEngine: React.FC = () => {
     fxEngine.setCalm(calmMode);
   }, [calmMode]);
 
-  // Ambient gentle butterfly spawner (every 7 seconds, one butterfly floats across the sky)
+  // Ambient gentle spawner (floating butterflies and hearts drifting up across the sky)
   useEffect(() => {
     if (calmMode) return;
     const interval = setInterval(() => {
       if (document.hidden) return;
       const startX = Math.random() * window.innerWidth;
       const startY = window.innerHeight + 10;
-      fxEngine.spawnButterflies(startX, startY, 1);
-    }, 7000);
+      // Alternate between a butterfly and a soft heart
+      if (Math.random() > 0.4) {
+        fxEngine.spawnButterflies(startX, startY, 1);
+      } else {
+        fxEngine.spawnScrollMagic(startX, startY, Math.floor(Math.random() * 10));
+      }
+    }, 3800);
 
     return () => clearInterval(interval);
+  }, [calmMode]);
+
+  // Scroll listener: as user scrolls down or up, spawn floating purple/blue hearts, butterflies & stardust!
+  useEffect(() => {
+    if (calmMode) return;
+
+    let lastScrollY = window.scrollY;
+    let lastScrollTime = 0;
+    let scrollCount = 0;
+
+    const onScroll = () => {
+      const now = performance.now();
+      if (now - lastScrollTime < 70) return; // ~14 bursts per sec throttle for 60fps performance
+      lastScrollTime = now;
+      scrollCount++;
+
+      const currentScrollY = window.scrollY;
+      const delta = currentScrollY - lastScrollY;
+      lastScrollY = currentScrollY;
+
+      // Spawn across the viewport width
+      const x = Math.random() * window.innerWidth;
+      const y = delta >= 0
+        ? window.innerHeight - 40 - Math.random() * 100
+        : 60 + Math.random() * 100;
+
+      fxEngine.spawnScrollMagic(x, y, scrollCount);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, [calmMode]);
 
   // Touch and pointer interactions: wherever user touches, spawn purple & blue hearts, butterflies & stardust!
@@ -55,7 +91,7 @@ export const FXEngine: React.FC = () => {
     // Handle single tap / click burst
     const handleTap = (clientX: number, clientY: number) => {
       const now = performance.now();
-      if (now - lastTap < 100) return; // avoid duplicate pointerdown + touchstart
+      if (now - lastTap < 100) return;
       lastTap = now;
       fxEngine.spawnMagicTouch(clientX, clientY, false);
     };
@@ -63,7 +99,7 @@ export const FXEngine: React.FC = () => {
     // Handle drag / move trail
     const handleMove = (clientX: number, clientY: number) => {
       const now = performance.now();
-      if (now - lastMove < 35) return; // 35ms throttle = ~28fps spawn rate, super smooth on mobile
+      if (now - lastMove < 35) return;
       lastMove = now;
       fxEngine.spawnMagicTouch(clientX, clientY, true);
     };
@@ -73,7 +109,6 @@ export const FXEngine: React.FC = () => {
     };
 
     const onPointerMove = (e: PointerEvent) => {
-      // If mouse is moved (fine pointer) or finger is dragged across screen
       if (e.buttons > 0 || window.matchMedia('(pointer: fine)').matches) {
         handleMove(e.clientX, e.clientY);
       }

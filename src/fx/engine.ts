@@ -254,6 +254,55 @@ export class FXManager {
     }
   }
 
+  public spawnScrollMagic(x: number, y: number, scrollIndex: number) {
+    if (this.particles.length > 80) return;
+
+    // Pick between rich purple or ice blue
+    const isPurple = scrollIndex % 2 === 0;
+    const color = isPurple
+      ? PURPLE_SHADES[Math.floor(Math.random() * PURPLE_SHADES.length)]
+      : BLUE_SHADES[Math.floor(Math.random() * BLUE_SHADES.length)];
+
+    // 1. Floating Heart
+    const angle = -Math.PI / 2 + (Math.random() - 0.5) * 1.0;
+    const speed = 1.2 + Math.random() * 2.0;
+    this.particles.push({
+      x,
+      y,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed - 1.4,
+      alpha: 0.95,
+      decay: 0.014 + Math.random() * 0.01,
+      size: 10 + Math.random() * 8,
+      color,
+      type: 'heart',
+      rotation: (Math.random() - 0.5) * 0.4,
+      vRot: (Math.random() - 0.5) * 0.05
+    });
+
+    // 2. Butterfly every ~4th scroll step
+    if (scrollIndex % 4 === 0) {
+      this.spawnButterflies(x + (Math.random() - 0.5) * 60, y, 1);
+    }
+
+    // 3. Stardust sparkle companion
+    if (Math.random() > 0.3) {
+      this.particles.push({
+        x: x + (Math.random() - 0.5) * 24,
+        y: y + (Math.random() - 0.5) * 24,
+        vx: (Math.random() - 0.5) * 1.5,
+        vy: -1.2 - Math.random() * 1.2,
+        alpha: 1,
+        decay: 0.02 + Math.random() * 0.015,
+        size: 4 + Math.random() * 4,
+        color: SPARKLE_SHADES[Math.floor(Math.random() * SPARKLE_SHADES.length)],
+        type: 'sparkle',
+        rotation: Math.random() * Math.PI,
+        vRot: (Math.random() - 0.5) * 0.1
+      });
+    }
+  }
+
   public spawnHearts(x: number, y: number, count = 3) {
     this.spawnMagicTouch(x, y, false);
   }

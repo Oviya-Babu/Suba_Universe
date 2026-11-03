@@ -158,8 +158,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 20px;
   margin-bottom: 40px;
+}
+
+.final-waving-sticker {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(167, 139, 250, 0.4));
+  animation: floatSmall 2.8s ease-in-out infinite;
+}
+
+@keyframes floatSmall {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 /* Actions footer */

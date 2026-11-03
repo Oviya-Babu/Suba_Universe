@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useJourney } from '../journey/JourneyProvider';
 import { playSFX } from '../audio/sfx';
 import { CelestialAtmosphere } from '../components/CelestialAtmosphere';
@@ -9,10 +9,23 @@ import './Blessing.css';
 export const Blessing: React.FC = () => {
   const { dispatch, soundOn } = useJourney();
   const copy = copyData.blessing;
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imgSrc, setImgSrc] = useState(`${import.meta.env.BASE_URL}assets/divine/perumal-fast.webp`);
 
   const handleOpenUniverse = () => {
     playSFX('chime', soundOn);
     dispatch({ type: 'OPEN_UNIVERSE' });
+  };
+
+  const handleImageError = () => {
+    // Robust fallback ladder: fast.webp -> perumal.webp -> perumal.jpg -> perumal.png
+    if (imgSrc.includes('perumal-fast.webp')) {
+      setImgSrc(`${import.meta.env.BASE_URL}assets/divine/perumal.webp`);
+    } else if (imgSrc.includes('perumal.webp')) {
+      setImgSrc(`${import.meta.env.BASE_URL}assets/divine/perumal.jpg`);
+    } else if (imgSrc.includes('perumal.jpg')) {
+      setImgSrc(`${import.meta.env.BASE_URL}assets/divine/perumal.png`);
+    }
   };
 
   return (
@@ -24,12 +37,34 @@ export const Blessing: React.FC = () => {
       <div className="blessing-glow-backdrop" aria-hidden="true" />
 
       {/* Arched Frame with Perumal Image */}
-      <div className="blessing-frame">
-        <img
-          src={`${import.meta.env.BASE_URL}assets/divine/perumal.png`}
-          alt={siteConfig.blessing.imageAlt}
-          className="blessing-image"
-        />
+      <div className={`blessing-frame ${imageLoaded ? 'is-loaded' : 'is-loading'}`}>
+        {!imageLoaded && (
+          <div className="blessing-placeholder" aria-hidden="true">
+            <span className="blessing-shimmer" />
+            <span className="blessing-om">🕉️</span>
+          </div>
+        )}
+        <picture>
+          <source
+            type="image/webp"
+            srcSet={`${import.meta.env.BASE_URL}assets/divine/perumal-fast.webp 420w, ${import.meta.env.BASE_URL}assets/divine/perumal.webp 736w`}
+            sizes="(max-width: 480px) 280px, 320px"
+          />
+          <source
+            type="image/jpeg"
+            srcSet={`${import.meta.env.BASE_URL}assets/divine/perumal.jpg 736w`}
+            sizes="(max-width: 480px) 280px, 320px"
+          />
+          <img
+            src={imgSrc}
+            alt={siteConfig.blessing.imageAlt}
+            className={`blessing-image ${imageLoaded ? 'visible' : 'hidden'}`}
+            loading="eager"
+            decoding="async"
+            onLoad={() => setImageLoaded(true)}
+            onError={handleImageError}
+          />
+        </picture>
       </div>
 
       {/* Blessing Text */}

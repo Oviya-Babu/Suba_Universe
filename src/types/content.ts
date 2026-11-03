@@ -77,6 +77,7 @@ export interface Poem {
   linesTa: string[];
   linesEn: string[];
   classicEcho?: string;
+  isTamil?: boolean;
 }
 
 export interface Penguin {

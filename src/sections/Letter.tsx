@@ -3,6 +3,7 @@ import letterData from '../content/letter.json';
 import { Letter as LetterType } from '../types/content';
 import { playSFX } from '../audio/sfx';
 import { useJourney } from '../journey/JourneyProvider';
+import { Character } from '../components/Character';
 import './Letter.css';
 
 export const Letter: React.FC = () => {
@@ -86,15 +87,9 @@ export const Letter: React.FC = () => {
         ) : (
           <>
             <article className="letter-paper" aria-hidden="true">
-              {/* Pressed Flower Doodle */}
+              {/* Pressed Flower Doodle & Cat Stamp */}
               <div className="doodle-flower">
-                <svg width="40" height="40" viewBox="0 0 40 40">
-                  <path d="M20,40 Q18,25 20,15" stroke="#A78BFA" strokeWidth="1.5" fill="none" />
-                  <ellipse cx="20" cy="15" rx="5" ry="8" fill="#FBCFE8" opacity="0.7" />
-                  <ellipse cx="14" cy="18" rx="7" ry="4" fill="#C4B5FD" opacity="0.7" />
-                  <ellipse cx="26" cy="18" rx="7" ry="4" fill="#C4B5FD" opacity="0.7" />
-                  <circle cx="20" cy="18" r="3" fill="#F5D98B" />
-                </svg>
+                <Character type="cat" variant="flower" size={42} />
               </div>
 
               <h3 className="letter-greeting">{letter.greeting}</h3>

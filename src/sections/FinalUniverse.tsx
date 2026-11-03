@@ -175,6 +175,11 @@ export const FinalUniverse: React.FC = () => {
       {/* Waving Characters */}
       <div className="waving-friends-row">
         <Character type="cat" variant="waving" size={75} />
+        <img
+          src={`${import.meta.env.BASE_URL}assets/stickers/whatsapp-sticker.webp`}
+          alt="Cute waving animated sticker"
+          className="final-waving-sticker"
+        />
         <Character type="penguin" variant="waving" size={75} />
       </div>
 

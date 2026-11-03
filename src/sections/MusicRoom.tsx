@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAudio } from '../audio/AudioProvider';
+import { Character } from '../components/Character';
 import copyData from '../content/copy.json';
 import './MusicRoom.css';
 
@@ -59,6 +60,12 @@ export const MusicRoom: React.FC = () => {
             <path d="M45,20 L30,90 L20,110" stroke="#EDE9FE" strokeWidth="3" fill="none" strokeLinecap="round" />
             <rect x="14" y="106" width="12" height="18" rx="2" fill="#F5D98B" transform="rotate(-15 20 115)" />
           </svg>
+        </div>
+
+        {/* Cute Music Cat Mascot */}
+        <div className="music-cat-listener">
+          <Character type="cat" variant="party" size={50} />
+          <span className="cat-groove-badge">🎧 Grooving to our songs with you 💜🐾</span>
         </div>
 
         {/* Equalizer Bars */}

@@ -166,9 +166,9 @@ export const SurpriseArcade: React.FC = () => {
   const wheelCanvasRef = useRef<HTMLCanvasElement | null>(null);
   const [wheelResult, setWheelResult] = useState<string | null>(null);
   const [isSpinning, setIsSpinning] = useState(false);
-  const wheelAngle = useRef(0);
+  const [rotationDegrees, setRotationDegrees] = useState(0);
 
-  const drawWheel = (angle: number) => {
+  const drawWheel = () => {
     const canvas = wheelCanvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -184,10 +184,10 @@ export const SurpriseArcade: React.FC = () => {
 
     ctx.clearRect(0, 0, w, h);
 
-    const colors = ['#8B5CF6', '#A78BFA', '#C4B5FD', '#EDE9FE', '#DDD6FE', '#7C3AED', '#6D28D9', '#5B21B6'];
+    const colors = ['#8B5CF6', '#EC4899', '#A78BFA', '#38BDF8', '#C4B5FD', '#F472B6', '#7C3AED', '#6D28D9'];
 
     for (let i = 0; i < segments.length; i++) {
-      const start = angle + i * segAngle;
+      const start = i * segAngle;
       const end = start + segAngle;
 
       ctx.beginPath();
@@ -206,7 +206,7 @@ export const SurpriseArcade: React.FC = () => {
       ctx.rotate(start + segAngle / 2);
       ctx.textAlign = 'right';
       ctx.fillStyle = '#FFFFFF';
-      ctx.font = 'bold 11px Nunito, sans-serif';
+      ctx.font = 'bold 12px Nunito, sans-serif';
       ctx.fillText(segments[i], r - 16, 4);
       ctx.restore();
     }
@@ -217,12 +217,12 @@ export const SurpriseArcade: React.FC = () => {
     ctx.fillStyle = '#F5D98B';
     ctx.fill();
     ctx.strokeStyle = '#24143F';
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 2.5;
     ctx.stroke();
   };
 
   useEffect(() => {
-    drawWheel(wheelAngle.current);
+    drawWheel();
   }, []);
 
   const spinWheel = () => {
@@ -231,46 +231,32 @@ export const SurpriseArcade: React.FC = () => {
     setWheelResult(null);
     playSFX('whoosh', soundOn);
 
-    if (calmMode) {
-      // Instant reveal for reduced motion
-      const randomIndex = Math.floor(Math.random() * surprises.wheel.length);
-      setWheelResult(surprises.wheel[randomIndex]);
-      setIsSpinning(false);
-      return;
-    }
-
     const segments = surprises.wheel;
-    const segAngle = (Math.PI * 2) / segments.length;
-    const randomRotations = 5 + Math.random() * 4; // 5 to 9 full spins
-    const targetOffset = Math.random() * Math.PI * 2;
-    const totalSpinAngle = randomRotations * Math.PI * 2 + targetOffset;
+    const segCount = segments.length;
+    const segDeg = 360 / segCount;
+    // 5 to 8 full spins + a random offset
+    const extraRounds = 5 + Math.floor(Math.random() * 4);
+    const extraDegrees = Math.floor(Math.random() * 360);
+    const nextTotalDeg = rotationDegrees + extraRounds * 360 + extraDegrees;
 
-    const startTime = performance.now();
-    const duration = 3200;
-    const startAngle = wheelAngle.current;
+    setRotationDegrees(nextTotalDeg);
 
-    const animateWheel = (now: number) => {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
-      const ease = 1 - Math.pow(1 - progress, 3);
-      const current = startAngle + totalSpinAngle * ease;
-      wheelAngle.current = current;
-      drawWheel(current);
-
-      if (progress < 1) {
-        requestAnimationFrame(animateWheel);
-      } else {
-        setIsSpinning(false);
-        // Calculate winning segment (pointer is at top: -PI/2)
-        const normalized = ((-Math.PI / 2 - current) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2);
-        const winningIndex = Math.floor(normalized / segAngle) % segments.length;
-        setWheelResult(segments[winningIndex]);
-        playSFX('sparkle', soundOn);
-      }
-    };
-
-    requestAnimationFrame(animateWheel);
+    setTimeout(() => {
+      setIsSpinning(false);
+      // Top pointer is at 270 deg (12 o'clock)
+      const effectiveDeg = (270 - (nextTotalDeg % 360) + 360) % 360;
+      const winningIndex = Math.floor(effectiveDeg / segDeg) % segCount;
+      setWheelResult(segments[winningIndex]);
+      playSFX('sparkle', soundOn);
+      try {
+        confetti({
+          particleCount: 55,
+          spread: 85,
+          origin: { y: 0.7 },
+          colors: ['#A78BFA', '#F472B6', '#FEF08A', '#38BDF8']
+        });
+      } catch (e) {}
+    }, 3200);
   };
 
   // 4. Tolerance Meter
@@ -459,7 +445,11 @@ export const SurpriseArcade: React.FC = () => {
             <div className="gift-reveal-box secret-box" role="status" aria-live="polite">
               <div className="secret-lock-icon">
                 <div className="secret-box-visual">
-                  <Character type="cat" variant="gift" size={70} />
+                  <img
+                    src={`${import.meta.env.BASE_URL}assets/stickers/whatsapp-sticker.webp`}
+                    alt="Cute animated sticker"
+                    className="secret-animated-sticker"
+                  />
                   <span className="secret-lock-badge">🔒 TOP SECRET 🤫</span>
                   <Character type="penguin" variant="gift" size={70} />
                 </div>
@@ -528,6 +518,15 @@ export const SurpriseArcade: React.FC = () => {
           <p className="arcade-card-desc">Spin the wheel to decide our next activity!</p>
 
           <div className="wheel-container">
+            <div className="wheel-cheerleader-badge">
+              <img
+                src={`${import.meta.env.BASE_URL}assets/stickers/whatsapp-sticker.webp`}
+                alt="Cute cheerleader"
+                className="wheel-mascot-img"
+              />
+              <span className="wheel-mascot-speech">Spin for our next adventure! 🎡💜</span>
+            </div>
+
             <div className="wheel-stage">
               <div className="wheel-pointer" aria-hidden="true" />
               <canvas
@@ -535,11 +534,16 @@ export const SurpriseArcade: React.FC = () => {
                 width={260}
                 height={260}
                 className="wheel-canvas"
+                style={{
+                  transform: `rotate(${rotationDegrees}deg)`,
+                  transition: isSpinning ? 'transform 3.2s cubic-bezier(0.12, 0.8, 0.2, 1)' : 'none',
+                  willChange: 'transform'
+                }}
               />
             </div>
 
             <button
-              className="btn-primary"
+              className="btn-primary wheel-spin-action-btn"
               onClick={spinWheel}
               disabled={isSpinning}
             >
@@ -548,7 +552,7 @@ export const SurpriseArcade: React.FC = () => {
 
             {wheelResult && (
               <div className="wheel-result-card" role="status" aria-live="polite">
-                ✨ Result: {wheelResult}
+                ✨ Result: <strong>{wheelResult}</strong>
               </div>
             )}
           </div>
