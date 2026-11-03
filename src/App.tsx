@@ -4,6 +4,7 @@ import { AudioProvider } from './audio/AudioProvider';
 import { FXEngine } from './components/FXEngine';
 import { TopNavigation } from './components/TopNavigation';
 import { MiniPlayer } from './components/MiniPlayer';
+import { CelestialAtmosphere } from './components/CelestialAtmosphere';
 
 // Act I Sections
 import { Entrance } from './sections/Entrance';
@@ -23,19 +24,26 @@ import { Kavithai } from './sections/Kavithai';
 import { MyWish } from './sections/MyWish';
 import { FinalUniverse } from './sections/FinalUniverse';
 
-import copyData from './content/copy.json';
 import './styles/global.css';
 
 const AppContent: React.FC = () => {
-  const { stage, soundOn, calmMode, dispatch } = useJourney();
-  const copyUI = copyData.ui;
+  const { stage } = useJourney();
 
   return (
     <>
-      {/* Shared FX Canvas */}
+      {/* Living Celestial Atmosphere Background for all stages */}
+      <div className="celestial-atmosphere-fixed" aria-hidden="true">
+        <CelestialAtmosphere
+          variant={stage === 'blessing' ? 'blessing' : 'universe'}
+          showMoon={stage === 'entrance'}
+          showShootingStar={true}
+        />
+      </div>
+
+      {/* Shared FX Canvas for Hearts, Butterflies & Stardust */}
       <FXEngine />
 
-      {/* Unified Top Navigation: Back Button (Top-Left) & Sound/Calm Controls (Top-Right) */}
+      {/* Unified Top Navigation: Back Button (Top-Left) & Sound/Controls (Top-Right) */}
       <TopNavigation />
 
       {/* Main Journey Stages */}
@@ -46,7 +54,7 @@ const AppContent: React.FC = () => {
 
       {/* Act II: The Full Universe */}
       {stage === 'universe' && (
-        <main>
+        <main style={{ position: 'relative', zIndex: 1 }}>
           <MusicRoom />
           <Scrapbook />
           <QuoteBreather initialIndex={0} />

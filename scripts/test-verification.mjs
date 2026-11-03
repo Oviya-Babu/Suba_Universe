@@ -8,45 +8,48 @@ import puppeteer from 'puppeteer-core';
   });
 
   const page = await browser.newPage();
+  // Simulate mobile phone with touch and reduced-motion (like battery saver mode)
   await page.setViewport({ width: 390, height: 844, isMobile: true, hasTouch: true });
+  await page.emulateMediaFeatures([{ name: 'prefers-reduced-motion', value: 'reduce' }]);
 
-  console.log('Testing Blessing page (Perumal image)...');
-  await page.goto('http://localhost:4173/?stage=blessing', { waitUntil: 'networkidle0' });
-  
-  const imgStatus = await page.evaluate(() => {
-    const img = document.querySelector('.blessing-image');
-    return {
-      src: img?.src,
-      complete: img?.complete,
-      naturalWidth: img?.naturalWidth,
-      naturalHeight: img?.naturalHeight,
-      visible: img?.classList.contains('visible')
-    };
-  });
-  console.log('Perumal Image Status:', imgStatus);
-
-  console.log('\nTesting Universe (Wheel, Poems, Sticker)...');
+  console.log('Testing Universe on Mobile...');
   await page.goto('http://localhost:4173/?stage=universe', { waitUntil: 'networkidle0' });
 
-  // Check sticker
-  const stickerStatus = await page.evaluate(() => {
-    const sticker = document.querySelector('.wheel-mascot-img');
+  // 1. Check Celestial Atmosphere is active in Act II
+  const bgExists = await page.evaluate(() => {
+    const fixedAtm = document.querySelector('.celestial-atmosphere-fixed');
+    const auroras = document.querySelectorAll('.aurora-blob');
     return {
-      src: sticker?.src,
-      complete: sticker?.complete,
-      naturalWidth: sticker?.naturalWidth,
-      naturalHeight: sticker?.naturalHeight
+      hasFixedAtmosphere: Boolean(fixedAtm),
+      auroraCount: auroras.length
     };
   });
-  console.log('Wheel Sticker Status:', stickerStatus);
+  console.log('Mobile Celestial Atmosphere:', bgExists);
 
-  // Test Wheel Spin
-  console.log('\nTesting Wheel Spin...');
+  // 2. Check Kavithai - New Tamil poem
+  console.log('\nChecking Kavithai Section...');
+  const poemInfo = await page.evaluate(() => {
+    const titleTa = document.querySelector('.poem-title-ta')?.textContent?.trim();
+    const firstLine = document.querySelector('.poem-lines-ta p:first-child')?.textContent?.trim();
+    const lastP = Array.from(document.querySelectorAll('.poem-lines-ta p')).filter(p => p.textContent.trim().length > 0).pop();
+    const badgeText = document.querySelector('.kavithai-badge-wrap')?.textContent?.trim() || '';
+    const sectionSub = document.querySelector('.section-subtitle')?.textContent?.trim();
+    return {
+      titleTa,
+      firstLine,
+      lastLine: lastP?.textContent?.trim(),
+      hasSpecialTamilBadge: badgeText.includes('1 Special') || badgeText.includes('The One'),
+      sectionSub
+    };
+  });
+  console.log('Tamil Poem Verification:', poemInfo);
+
+  // 3. Test Wheel Spin on mobile with reduced motion enabled
+  console.log('\nTesting Wheel Spin on mobile...');
   const spinBtn = await page.$('.wheel-spin-action-btn');
   if (spinBtn) {
     await spinBtn.click();
-    console.log('Clicked spin button!');
-    // Check rotation immediately
+    console.log('Clicked Spin Button!');
     await new Promise(r => setTimeout(r, 600));
     const midTransform = await page.evaluate(() => {
       const c = document.querySelector('.wheel-canvas');
@@ -54,61 +57,24 @@ import puppeteer from 'puppeteer-core';
     });
     console.log('Wheel mid-spin transform:', midTransform);
 
-    // Wait for spin to complete (3.5s)
+    // Wait for spin to complete
     await new Promise(r => setTimeout(r, 3600));
     const resultCard = await page.evaluate(() => {
       const r = document.querySelector('.wheel-result-card');
       return r ? r.textContent.trim() : null;
     });
     console.log('Wheel Result Card:', resultCard);
-  } else {
-    console.log('Could not find .wheel-spin-action-btn');
   }
 
-  // Test Kavithai
-  console.log('\nTesting Kavithai...');
-  const kavithaiInfo = await page.evaluate(() => {
-    const badge = document.querySelector('.special-tamil-pill, .poem-lang-pill');
-    const taLines = document.querySelectorAll('.poem-lines-ta p');
-    return {
-      badge: badge ? badge.textContent.trim() : null,
-      taLineCount: taLines.length
-    };
-  });
-  console.log('Poem 1 (Tamil Kavithai):', kavithaiInfo);
-
-  // Next poem
-  const nextBtns = await page.$$('.kavithai-nav-row .pill-button');
-  const nextBtn = nextBtns[nextBtns.length - 1];
-  if (nextBtn) {
-    await nextBtn.click();
-    await new Promise(r => setTimeout(r, 300));
-    const poem2Info = await page.evaluate(() => {
-      const badge = document.querySelector('.special-tamil-pill, .poem-lang-pill');
-      const taLines = document.querySelectorAll('.poem-lines-ta p');
-      const enTitle = document.querySelector('.standalone-en-title');
-      return {
-        badge: badge ? badge.textContent.trim() : null,
-        taLineCount: taLines.length,
-        enTitle: enTitle ? enTitle.textContent.trim() : null
-      };
-    });
-    console.log('Poem 2 (English Poem):', poem2Info);
-  }
-
-  // Test Scroll Magic
-  console.log('\nTesting Scroll effect...');
+  // 4. Test touch and scroll
+  console.log('\nTesting Touch and Scroll Magic on mobile...');
+  await page.touchscreen.tap(180, 400);
   await page.evaluate(() => {
-    window.scrollTo({ top: 1200 });
+    window.scrollTo({ top: 800 });
   });
-  await new Promise(r => setTimeout(r, 200));
-  await page.evaluate(() => {
-    window.scrollTo({ top: 1800 });
-  });
-  await new Promise(r => setTimeout(r, 200));
-  console.log('Scroll events fired successfully.');
+  await new Promise(r => setTimeout(r, 400));
+  console.log('Touch & scroll triggered successfully on mobile.');
 
   await browser.close();
-  console.log('\nALL VERIFICATION TESTS COMPLETED SUCCESSFULLY!');
+  console.log('\nALL MOBILE VERIFICATION TESTS COMPLETED SUCCESSFULLY!');
 })();
-

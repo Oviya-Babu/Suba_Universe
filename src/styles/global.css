@@ -208,21 +208,9 @@ img, video {
   box-shadow: 0 6px 24px rgba(167, 139, 250, 0.6);
 }
 
-/* Calm Mode & Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-body.calm-mode *,
-body.calm-mode *::before,
-body.calm-mode *::after {
-  animation: none !important;
-  transition: opacity 0.2s linear !important;
+/* Calm Mode (Subtle decorative calming without breaking celebratory interactions) */
+body.calm-mode .celestial-atmosphere {
+  opacity: 0.6;
 }
 
 /* Custom delicate celestial scrollbar */
@@ -240,7 +228,7 @@ body.calm-mode *::after {
   background: rgba(167, 139, 250, 0.7);
 }
 
-/* Celestial background glow effects */
+/* Vibrant Celestial aurora background glow effects for mobile & desktop */
 body::before {
   content: '';
   position: fixed;
@@ -248,10 +236,40 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   background: 
-    radial-gradient(circle at 15% 25%, rgba(109, 40, 217, 0.14) 0%, transparent 45%),
-    radial-gradient(circle at 85% 75%, rgba(244, 114, 182, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 50% 90%, rgba(167, 139, 250, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.22) 0%, transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(56, 189, 248, 0.16) 0%, transparent 45%),
+    radial-gradient(circle at 30% 70%, rgba(236, 72, 153, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 75% 85%, rgba(168, 85, 247, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(36, 20, 63, 0.95) 0%, #120822 100%);
   pointer-events: none;
   z-index: 0;
+  animation: auroraShift 18s ease-in-out infinite alternate;
+}
+
+@keyframes auroraShift {
+  0% {
+    filter: hue-rotate(0deg) brightness(1);
+    transform: scale(1);
+  }
+  50% {
+    filter: hue-rotate(15deg) brightness(1.08);
+    transform: scale(1.03);
+  }
+  100% {
+    filter: hue-rotate(-15deg) brightness(1);
+    transform: scale(1);
+  }
+}
+
+.celestial-atmosphere-fixed {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
 }

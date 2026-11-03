@@ -70,10 +70,7 @@ export class FXManager {
   }
 
   public setCalm(calm: boolean) {
-    this.isCalm = calm;
-    if (calm) {
-      this.particles = [];
-    }
+    this.isCalm = false; // Always keep animations lively for birthday experience!
   }
 
   private onResize = () => {
@@ -83,10 +80,12 @@ export class FXManager {
   private resize() {
     if (!this.canvas) return;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    this.canvas.width = window.innerWidth * dpr;
-    this.canvas.height = window.innerHeight * dpr;
+    const w = window.innerWidth || document.documentElement.clientWidth || 360;
+    const h = window.innerHeight || document.documentElement.clientHeight || 640;
+    this.canvas.width = w * dpr;
+    this.canvas.height = h * dpr;
     if (this.ctx) {
-      this.ctx.scale(dpr, dpr);
+      this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
   }
 
@@ -413,7 +412,9 @@ export class FXManager {
 
   private render() {
     if (!this.ctx || !this.canvas) return;
-    this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    const w = window.innerWidth || document.documentElement.clientWidth || 360;
+    const h = window.innerHeight || document.documentElement.clientHeight || 640;
+    this.ctx.clearRect(0, 0, w, h);
 
     for (const p of this.particles) {
       this.ctx.save();

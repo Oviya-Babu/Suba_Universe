@@ -32,8 +32,10 @@ function loadFromStorage(): Partial<JourneyState> {
   try {
     const actIComplete = localStorage.getItem('subashree_bday_act_i_done') === 'true' || localStorage.getItem('actIComplete') === 'true';
     const soundOn = localStorage.getItem('subashree_bday_sound_on') !== 'false' && localStorage.getItem('soundOn') !== 'false';
-    const calmMode = localStorage.getItem('subashree_bday_calm_mode') === 'true' || localStorage.getItem('calmMode') === 'true';
-    return { actIComplete, soundOn, calmMode };
+    // Clear out any old legacy calm_mode so mobile always gets the magical animations!
+    localStorage.removeItem('subashree_bday_calm_mode');
+    localStorage.removeItem('calmMode');
+    return { actIComplete, soundOn, calmMode: false };
   } catch {
     return {};
   }
@@ -43,7 +45,6 @@ function saveToStorage(state: JourneyState) {
   try {
     localStorage.setItem('subashree_bday_act_i_done', String(state.actIComplete));
     localStorage.setItem('subashree_bday_sound_on', String(state.soundOn));
-    localStorage.setItem('subashree_bday_calm_mode', String(state.calmMode));
   } catch {}
 }
 

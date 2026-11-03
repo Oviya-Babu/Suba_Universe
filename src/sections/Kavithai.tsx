@@ -11,7 +11,7 @@ export const Kavithai: React.FC = () => {
   const { soundOn } = useJourney();
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [showEnglishTranslation, setShowEnglishTranslation] = useState(true);
+  const [showEnglishTranslation, setShowEnglishTranslation] = useState(false);
   const [fade, setFade] = useState(true);
 
   const poem = poems[currentIndex];
@@ -38,24 +38,20 @@ export const Kavithai: React.FC = () => {
   return (
     <section id="kavithai" className="section-wrapper kavithai-section" aria-labelledby="kavithai-heading">
       <header className="section-header">
-        <h2 id="kavithai-heading" className="section-title">
-          Verses Just for You 💜
+        <h2 id="kavithai-heading" className="section-title tamil-text" lang="ta" style={{ textAlign: 'center' }}>
+          உனக்காக சில வரிகள்... 💜
         </h2>
         <p className="section-subtitle">
-          1 Special Tamil Kavithai & Heartfelt Poems Written for Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba
+          Verses written straight from the heart for Chuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuba ♡
         </p>
       </header>
 
       <div className="kavithai-container">
         {/* Top Controls */}
         <div className="kavithai-controls-top">
-          <div className="kavithai-badge-wrap">
-            {poem.isTamil ? (
-              <span className="special-tamil-pill">✨ The One & Only Tamil Kavithai 🌟</span>
-            ) : (
-              <span className="poem-lang-pill">📖 English Poem {currentIndex + 1} of {poems.length}</span>
-            )}
-          </div>
+          <span className="poem-index-pill">
+            {currentIndex + 1} of {poems.length}
+          </span>
 
           {poem.isTamil && (
             <button
@@ -63,14 +59,14 @@ export const Kavithai: React.FC = () => {
               onClick={() => setShowEnglishTranslation(prev => !prev)}
               aria-pressed={showEnglishTranslation}
             >
-              {showEnglishTranslation ? 'Hide English Meaning' : 'Show English Meaning 📖'}
+              {showEnglishTranslation ? 'Hide English Translation' : 'English Translation 📖'}
             </button>
           )}
         </div>
 
         {/* Poem Card */}
         <article
-          className={`kavithai-card ${poem.isTamil ? 'is-tamil-special' : 'is-english-card'}`}
+          className={`kavithai-card ${poem.isTamil ? 'is-tamil-card' : 'is-english-card'}`}
           style={{ opacity: fade ? 1 : 0 }}
         >
           {poem.isTamil ? (
@@ -87,7 +83,7 @@ export const Kavithai: React.FC = () => {
 
               <div className="poem-lines-ta" lang="ta">
                 {poem.linesTa.map((line, idx) => (
-                  <p key={idx} style={{ minHeight: line === '' ? '0.8em' : 'auto' }}>
+                  <p key={idx} style={{ minHeight: line === '' ? '0.9em' : 'auto' }}>
                     {line}
                   </p>
                 ))}
@@ -100,7 +96,7 @@ export const Kavithai: React.FC = () => {
                   </div>
                   <div className="poem-lines-en">
                     {poem.linesEn.map((line, idx) => (
-                      <p key={idx} style={{ minHeight: line === '' ? '0.8em' : 'auto' }}>
+                      <p key={idx} style={{ minHeight: line === '' ? '0.9em' : 'auto' }}>
                         {line}
                       </p>
                     ))}
@@ -117,7 +113,7 @@ export const Kavithai: React.FC = () => {
 
               <div className="poem-lines-en standalone-en-lines">
                 {poem.linesEn.map((line, idx) => (
-                  <p key={idx} style={{ minHeight: line === '' ? '0.8em' : 'auto' }}>
+                  <p key={idx} style={{ minHeight: line === '' ? '0.9em' : 'auto' }}>
                     {line}
                   </p>
                 ))}
@@ -140,10 +136,10 @@ export const Kavithai: React.FC = () => {
             {poems.map((p, idx) => (
               <button
                 key={idx}
-                className={`kavithai-dot ${idx === currentIndex ? 'active' : ''} ${p.isTamil ? 'tamil-dot' : ''}`}
+                className={`kavithai-dot ${idx === currentIndex ? 'active' : ''}`}
                 onClick={() => goToPoem(idx)}
                 aria-label={`Go to poem ${idx + 1}`}
-                title={p.isTamil ? 'Tamil Kavithai' : p.titleEn}
+                title={p.isTamil ? p.titleTa : p.titleEn}
               />
             ))}
           </div>

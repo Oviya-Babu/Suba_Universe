@@ -536,7 +536,9 @@ export const SurpriseArcade: React.FC = () => {
                 className="wheel-canvas"
                 style={{
                   transform: `rotate(${rotationDegrees}deg)`,
+                  WebkitTransform: `rotate(${rotationDegrees}deg)`,
                   transition: isSpinning ? 'transform 3.2s cubic-bezier(0.12, 0.8, 0.2, 1)' : 'none',
+                  WebkitTransition: isSpinning ? '-webkit-transform 3.2s cubic-bezier(0.12, 0.8, 0.2, 1)' : 'none',
                   willChange: 'transform'
                 }}
               />
