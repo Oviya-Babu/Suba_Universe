@@ -111,3 +111,4 @@ import puppeteer from 'puppeteer-core';
   await browser.close();
   console.log('\nALL VERIFICATION TESTS COMPLETED SUCCESSFULLY!');
 })();
+
